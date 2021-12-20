@@ -12,7 +12,6 @@ Capybara.register_driver(:selenium_chrome) do |app|
   # https://selenium.dev/selenium/docs/api/rb/Selenium/WebDriver/Chrome/Options.html
   options = Selenium::WebDriver::Chrome::Options.new
   # Sets the initial window size.
-  options.add_argument('start-maximized')
 
   # https://selenium.dev/selenium/docs/api/rb/Selenium/WebDriver/Remote/Capabilities.html
   CAPABILITIES = Selenium::WebDriver::Remote::Capabilities.chrome(
@@ -122,7 +121,7 @@ end
 Capybara.app_host = 'http://demowebshop.tricentis.com'
 # The maximum number of seconds to wait for asynchronous processes to finish (default is 2 seconds).
 # https://github.com/teamcapybara/capybara#asynchronous-javascript-ajax-and-friends
-Capybara.default_max_wait_time = 5
+Capybara.default_max_wait_time = 10
 # Where to put pages saved through save_page, save_screenshot, save_and_open_page, or save_and_open_screenshot.
 # https://github.com/teamcapybara/capybara#debugging
 Capybara.save_path = 'tmp/capybara'

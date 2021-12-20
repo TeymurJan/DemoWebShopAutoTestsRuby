@@ -58,6 +58,15 @@ RSpec.describe 'Testing One Page Checkout', type: :feature do
     @one_page_checkout.checkoutCreditCardPayment
     @one_page_checkout.continueButton { |el| el.click }
 
+    #Input card information
+    @one_page_checkout.inputCardHolderName('Ruby Garage')
+    @one_page_checkout.inputCardNumber('4111111111111111')
+    @one_page_checkout.inputCardCode('000')
+    @one_page_checkout.continueButton { |el| el.click }
+
+    #Confirm order
+    @one_page_checkout.clickConfirmButton
+
     expect(@one_page_checkout.getSuccessfulOrderMessage).to eq('Your order has been successfully processed!')
   end
 end

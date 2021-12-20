@@ -15,7 +15,7 @@ class OnePageCheckout < SitePrism::Page
   element :confirm_order_button, 'input[value="Confirm"]'
   element :select_country, '#BillingNewAddress_CountryId'
   element :next_day_air_radio_button, '#shippingoption_1'
-  element :successful_order_title, '.title'
+  element :successful_order_title, :xpath, "//div[@class='title']//strong"
 
   elements :continue_buttons, 'input[value="Continue"]'
 
